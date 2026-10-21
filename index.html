@@ -8,14 +8,17 @@
   <title>Frequência — descubra seu próximo som</title>
   <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="logs.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="topbar container d-flex justify-content-between align-items-center">
     <a class="brand" href="./" aria-label="Frequência, início"><span class="brand-icon" aria-hidden="true">≋</span> frequência<span class="brand-dot">.</span></a>
-    <a class="source-link" href="https://www.deezer.com" target="_blank" rel="noopener noreferrer">Música por Deezer ↗</a>
+    <div class="d-flex align-items-center gap-3"><button id="show-logs" type="button" class="btn btn-outline-secondary btn-sm">Histórico</button>
+    <a class="source-link" href="https://www.deezer.com" target="_blank" rel="noopener noreferrer">Música por Deezer ↗</a></div>
   </header>
   <main class="container">
+    <p id="log-warning" class="alert alert-warning mt-3" role="status" hidden></p>
     <section class="hero row align-items-center gy-4" aria-labelledby="hero-title">
       <div class="hero-copy col-12 col-lg-7">
         <p class="eyebrow"><span class="live-dot"></span> LADO A · NOVAS DESCOBERTAS</p>
@@ -39,5 +42,13 @@
   </main>
   <footer class="container d-flex flex-wrap align-items-start align-items-md-center gap-4"><a class="brand footer-brand" href="./">frequência.</a><div><strong>Victor Luís Rubert Andriolli</strong><p>Fundamentos ao Desenvolvimento Web · Sistemas de Informação · Unoesc</p></div><span class="footer-credit">Dados fornecidos pela Deezer</span></footer>
   <dialog id="album-dialog" aria-labelledby="album-title"><button id="close-dialog" type="button" class="btn icon-button dialog-close" aria-label="Fechar detalhes do álbum">✕</button><div id="album-content"></div></dialog>
+  <dialog id="logs-dialog" aria-labelledby="logs-title">
+    <button id="close-logs" type="button" class="btn icon-button dialog-close" aria-label="Fechar histórico">✕</button>
+    <h2 id="logs-title">Histórico de consultas</h2>
+    <p class="text-body-secondary small">Registros de uso da Deezer salvos na API da disciplina.</p>
+    <button id="refresh-logs" type="button" class="btn btn-outline-secondary btn-sm mb-3">Atualizar histórico</button>
+    <p id="log-status" role="status" aria-live="polite"></p>
+    <div id="log-list"></div>
+  </dialog>
 </body>
 </html>

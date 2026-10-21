@@ -40,3 +40,5 @@ h1>span{color:#d09aff}
 footer.container{margin-bottom:0}
 @media(min-width:1400px){.hero{padding-top:90px;padding-bottom:95px}}
 @media(max-width:767.98px){.hero{padding-top:44px;padding-bottom:36px}.section-heading .secondary{align-self:flex-start;margin-bottom:16px}.footer-brand{width:100%}}
+
+#logs-dialog{width:min(800px,calc(100% - 32px))}.log-entry{background:var(--panel);font-size:13px}.log-entry dd{overflow-wrap:anywhere}#log-warning{font-size:13px}@media(max-width:575.98px){.source-link{display:none}.topbar{gap:12px}}

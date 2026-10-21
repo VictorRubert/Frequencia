@@ -22,7 +22,10 @@ function requestDeezer(path, params = {}) {
       cleanup();
       if (!result || result.error) {
         reject(new Error('A Deezer não conseguiu retornar os dados. Tente novamente.'));
-      } else resolve(result);
+      } else {
+        resolve(result);
+        registerDeezerLog(path, result);
+      }
     };
     script.onerror = () => {
       cleanup();
